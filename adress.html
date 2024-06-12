@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Vie</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <link rel="shortcut icon" href="images/lv full.png" type="image/x-icon" >
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+
+    <section id="header">
+            <a href="#"><img src="images/lv__edited_-removebg-preview.png" class="img-fluid" alt=""></a>
+            <div>
+                <ul id="navbar">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a  href="shop.html">Shop</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a class="active" href="cart.html"><i class="fas fa-shopping-bag"></i></a></li>
+                </ul>
+            </div>
+    </section>
+
+    <section id="cpage-header">
+        <h2>Adress and Billing Form</h2>
+        <p>One step away from your fav products</p>  
+    </section>
+
+<section id="address">
+    <div class="row">
+        <div class="col-75">
+          <div class="container">
+            <form action="https://script.google.com/macros/s/AKfycbyXYt95uwZ1Ewd5nOO5lrdwX6BP8-jbEv6TpeVWOOMQq_H9rpjR39aYeAawCqd_6Z9M/exec">
+      
+              <div class="row">
+                <div class="col-50">
+                  <h3>Billing Address</h3>
+                  <label for="fname"> Full Name</label>
+                  <input type="text" id="fname" name="firstname" placeholder="First Name">
+                  <label for="email"> Email</label>
+                  <input type="text" id="email" name="email" placeholder="Your Email">
+                  <label for="adr"> Address</label>
+                  <input type="text" id="adr" name="address" placeholder="Address">
+                  <label for="city"> City</label>
+                  <input type="text" id="city" name="city" placeholder="City">
+      
+                  <div class="row">
+                    <div class="col-50">
+                      <label for="state">State</label>
+                      <input type="text" id="state" name="state" placeholder="State">
+                    </div>
+                    <div class="col-50">
+                      <label for="zip">Zip</label>
+                      <input type="text" id="zip" name="zip" placeholder="Pin Code">
+                    </div>
+                  </div>
+                </div>
+      
+                <div class="col-50">
+                  <h3>Payment</h3>
+                  <label for="cname">Name on Card</label>
+                  <input type="text" id="cname" name="cardname" placeholder="Name on Card">
+                  <label for="ccnum">Credit card number</label>
+                  <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+                  <label for="expmonth">Exp Month</label>
+                  <input type="text" id="expmonth" name="expmonth" placeholder="Month">
+      
+                  <div class="row">
+                    <div class="col-50">
+                      <label for="expyear">Exp Year</label>
+                      <input type="text" id="expyear" name="expyear" placeholder="yyyy">
+                    </div>
+                    <div class="col-50">
+                      <label for="cvv">CVV</label>
+                      <input type="text" id="cvv" name="cvv" placeholder="xyz">
+                    </div>
+                  </div>
+                </div>
+      
+              </div>
+              <label>
+                <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
+              </label>
+              <input type="submit" value="Proceed to Pay" class="btn">
+            </form>
+          </div>
+        </div>
+      </div>
+</section>
+<section id="newsletter" class="section-p1 section-m1">
+  <div class="newstext">
+      <h4>Sign up for Newsletters</h4>
+      <p>Get Email updates about our new products and discounts!!</p>
+  </div>
+  <div class="form">
+      <input type="text" placeholder="Your Email address">
+      <button class="normal" onclick="window.location.href='login.html';">Sign Up</button>
+  </div>
+</section>
+    <footer class="section-p1">
+        <div class="col">
+            <img src="images/lv__edited_-removebg-preview.png" alt="" class="img-fluidl">
+            <h4>Contact</h4>
+            <p><strong>Address:</strong>562 wellington road,Street Road,street32,San Fransico</p>
+            <p><strong>Phone:</strong>1234567890</p>
+            <p><strong>Hours:</strong>10:00 - 18:00,Mon-Sat</p>
+        </div>
+        </div>
+        <div class="col">
+            <h4>My Account</h4>
+            <a href="#"onclick="window.location.href='login.html';">Sign In</a>
+            <a href="#"onclick="window.location.href='cart.html';">View cart</a>
+            <a href="#">My Wishlist</a>
+            <a href="#">Track my order</a>
+            <a href="#">Help</a>
+        </div>
+        <div class="col install">
+            <h4>Install App</h4>
+            <p>From App Store or Google Play</p>
+            <div class="row">
+                <img src="images/pay/app.jpg" alt="">
+                <img src="images/pay/play.jpg" alt="">
+            </div>
+            <p>Secured Payment Gateways</p>
+            <img src="images/pay/pay.png" alt="">
+        </div>
+
+    </footer>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxkgWotCMyvIKoT9aGtPCndZdHtHrq8i972t9CKAVjO6xC7T0I/exec'
+        const form = document.forms['google-sheet']
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+
+    <script src="script.js"></script>
+</body>
+</html>
